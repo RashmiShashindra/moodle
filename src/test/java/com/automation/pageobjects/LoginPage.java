@@ -1,14 +1,18 @@
 package com.automation.pageobjects;
 
 import com.automation.browser.BasePage;
+import com.automation.testcases.LoginTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.log4testng.Logger;
 
 /**
  * Created by RashmiM on 3/15/2016.
  */
 public class LoginPage extends BasePage{
+
+    private static Logger logger = Logger.getLogger(LoginPage.class);
 
     By username = By.id("login_username");
     By password = By.id("login_password");
@@ -17,6 +21,7 @@ public class LoginPage extends BasePage{
 
     public LoginPage(WebDriver driver){
         super(driver);
+        logger.info("Initialize Login ...");
     }
 
     public LandingPage step_Successful_User_Login(String uname,String pword){
@@ -36,23 +41,23 @@ public class LoginPage extends BasePage{
     public LoginPage step_Verify_Error_Message(String errorMessage) throws InterruptedException {
         Thread.sleep(2000);
         Assert.assertTrue(driver.findElement(loginErrorMessage).getText().equals(errorMessage));
-        System.out.println("Validated error message successfully!");
+        logger.info("Validated error message successfully!");
         return this;
     }
 
     private void action_EnterUsername(String name){
         driver.findElement(username).sendKeys(name);
-        System.out.println("Entered username Successfully");
+        logger.info("Entered username Successfully");
     }
 
     private void action_EnterPassword(String pwd){
         driver.findElement(password).sendKeys(pwd);
-        System.out.println("Entered Password successfully");
+        logger.info("Entered Password successfully");
     }
 
     private void clickLoginButton(){
         driver.findElement(login).click();
-        System.out.println("Clicked Login button Successfully");
+        logger.info("Clicked Login button Successfully");
     }
 
 

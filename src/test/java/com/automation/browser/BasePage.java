@@ -6,9 +6,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.*;
+import org.testng.log4testng.Logger;
 
 
 public class BasePage {
+
+    private static Logger logger = Logger.getLogger(BasePage.class);
+
     public static WebDriver driver = null;
 
     public BasePage(WebDriver driver){
@@ -31,14 +35,14 @@ public class BasePage {
         driver.manage().deleteAllCookies();
         driver.get("https://demo.moodle.net/");
         Assert.assertEquals("Moodle sandbox demo", driver.getTitle());
-        System.out.println("Successfully page load ...");
+        logger.info("Successfully page load ...");
         return driver;
     }
 
     public static void closeConnection(){
         driver.close();
         driver.quit();
-        System.out.println("Successfully terminate driver ...");
+        logger.info("Successfully terminate driver ...");
     }
 
 }
