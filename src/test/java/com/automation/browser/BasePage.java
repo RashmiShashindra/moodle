@@ -35,8 +35,8 @@ public class BasePage {
         }
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.get("https://demo.moodle.net/");
-        Assert.assertEquals("Moodle sandbox demo", driver.getTitle());
+        driver.get("https://demo.totaralms.com/login/index.php");
+        Assert.assertEquals("Totara Demo Site: Log in to the site", driver.getTitle());
         logger.info("*************** Test Started ********************");
         return driver;
     }

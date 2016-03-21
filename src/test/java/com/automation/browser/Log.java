@@ -2,7 +2,7 @@ package com.automation.browser;
 
 import com.automation.pageobjects.LoginPage;
 import com.automation.testcases.LoginTest;
-import org.testng.log4testng.Logger;
+import org.apache.log4j.*;
 
 /**
  * Created by RashmiM on 3/21/2016.
