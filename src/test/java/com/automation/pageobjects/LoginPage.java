@@ -11,7 +11,7 @@ import org.apache.log4j.*;
  */
 public class LoginPage extends BasePage{
 
-    final static Logger logger = org.apache.log4j.Logger.getLogger(LoginPage.class);
+    final static Logger logger = Logger.getLogger(LoginPage.class);
 
     By username = By.id("login_username");
     By password = By.id("login_password");

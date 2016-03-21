@@ -10,7 +10,7 @@ import org.testng.log4testng.Logger;
 public class Log {
 
 
-    private static Logger logger = Logger.getLogger(Log.class);
+    final static Logger logger = Logger.getLogger(Log.class);
 
 
     public static void main (String[] args){

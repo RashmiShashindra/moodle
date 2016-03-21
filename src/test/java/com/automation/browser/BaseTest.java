@@ -3,14 +3,13 @@ package com.automation.browser;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.log4testng.Logger;
-
+import org.apache.log4j.*;
 /**
  * Created by ShiwanthaK on 3/18/2016.
  */
 public class BaseTest {
 
-    final static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(BaseTest.class);
+    final static Logger logger = Logger.getLogger(BaseTest.class);
 
     private WebDriver driver;
 

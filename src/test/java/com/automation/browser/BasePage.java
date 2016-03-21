@@ -1,17 +1,19 @@
 package com.automation.browser;
 
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.*;
-import org.testng.log4testng.Logger;
+
+
 
 
 public class BasePage {
 
-    final static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(BasePage.class);
+    final static Logger logger = Logger.getLogger(BasePage.class);
 
     public static WebDriver driver = null;
 
