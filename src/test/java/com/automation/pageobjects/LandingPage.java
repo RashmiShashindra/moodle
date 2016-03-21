@@ -8,7 +8,7 @@ import org.testng.log4testng.Logger;
 
 public class LandingPage extends BasePage{
 
-    private static Logger logger = Logger.getLogger(LandingPage.class);
+    final static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(LandingPage.class);
 
     public LandingPage(WebDriver driver) {
         super(driver);

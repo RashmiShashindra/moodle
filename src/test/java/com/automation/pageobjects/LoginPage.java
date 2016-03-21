@@ -1,18 +1,17 @@
 package com.automation.pageobjects;
 
 import com.automation.browser.BasePage;
-import com.automation.testcases.LoginTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.log4testng.Logger;
+import org.apache.log4j.*;
 
 /**
  * Created by RashmiM on 3/15/2016.
  */
 public class LoginPage extends BasePage{
 
-    private static Logger logger = Logger.getLogger(LoginPage.class);
+    final static Logger logger = org.apache.log4j.Logger.getLogger(LoginPage.class);
 
     By username = By.id("login_username");
     By password = By.id("login_password");

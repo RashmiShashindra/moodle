@@ -10,7 +10,7 @@ import org.testng.log4testng.Logger;
  */
 public class BaseTest {
 
-    private static Logger logger = Logger.getLogger(BaseTest.class);
+    final static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(BaseTest.class);
 
     private WebDriver driver;
 

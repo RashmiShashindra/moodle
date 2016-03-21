@@ -11,7 +11,7 @@ import org.testng.log4testng.Logger;
 
 public class BasePage {
 
-    private static Logger logger = Logger.getLogger(BasePage.class);
+    final static org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(BasePage.class);
 
     public static WebDriver driver = null;
 
@@ -35,14 +35,14 @@ public class BasePage {
         driver.manage().deleteAllCookies();
         driver.get("https://demo.moodle.net/");
         Assert.assertEquals("Moodle sandbox demo", driver.getTitle());
-        logger.info("Successfully page load ...");
+        logger.info("*************** Test Started ********************");
         return driver;
     }
 
     public static void closeConnection(){
         driver.close();
         driver.quit();
-        logger.info("Successfully terminate driver ...");
+        logger.info("*************** Test Completed ********************");
     }
 
 }
