@@ -3,6 +3,9 @@ package com.automation.pageobjects;
 import com.automation.browser.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.apache.log4j.*;
 
@@ -13,15 +16,22 @@ public class LoginPage extends BasePage{
 
     final static Logger logger = Logger.getLogger(LoginPage.class);
 
-    By login = By.id("loginbtn");
-    By txtUserName = By.id("username");
-    By txtPassword = By.id("password");
-    By lblLoginErrorMessage = By.xpath("//*[@id='region-main']/div/div/div/div/div[1]/span");
+    @FindBy(id = "loginbtn")
+    WebElement login;
 
+    @FindBy(id = "username")
+    WebElement txtUserName;
+
+    @FindBy(id = "password")
+    WebElement txtPassword;
+
+    @FindBy(xpath = "//*[@id='region-main']/div/div/div/div/div[1]/span")
+    WebElement lblLoginErrorMessage;
 
 
     public LoginPage(WebDriver driver){
         super(driver);
+        PageFactory.initElements(driver, this);
         logger.info("Initialize Login ...");
     }
 
@@ -41,25 +51,24 @@ public class LoginPage extends BasePage{
 
     public LoginPage step_Verify_Error_Message(String errorMessage) throws InterruptedException {
         Thread.sleep(2000);
-        Assert.assertTrue(driver.findElement(lblLoginErrorMessage).getText().equals(errorMessage));
+        Assert.assertEquals(lblLoginErrorMessage.getText(),errorMessage);
         logger.info("Validated error message successfully!");
         return this;
     }
 
     private void action_EnterUsername(String name){
-        driver.findElement(txtUserName).sendKeys(name);
+        txtUserName.sendKeys(name);
         logger.info("Entered username Successfully");
     }
 
     private void action_EnterPassword(String pwd){
-        driver.findElement(txtPassword).sendKeys(pwd);
+        txtPassword.sendKeys(pwd);
         logger.info("Entered Password successfully");
     }
 
     private void clickLoginButton(){
-        driver.findElement(login).click();
+        login.click();
         logger.info("Clicked Login button Successfully");
     }
-
 
 }

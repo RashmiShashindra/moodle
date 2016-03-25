@@ -16,7 +16,7 @@
 
   <profiles>
     <profile>
-      <id>Reg_Forecasting</id>
+      <id>Reg_All</id>
       <build>
         <plugins>
           <plugin>
@@ -38,8 +38,8 @@
   <dependencies>
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-api</artifactId>
-      <version>2.47.1</version>
+      <artifactId>selenium-java</artifactId>
+      <version>2.53.0</version>
     </dependency>
 
     <dependency>
