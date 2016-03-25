@@ -2,7 +2,10 @@ package com.automation.testcases;
 
 import com.automation.browser.BaseTest;
 import com.automation.pageobjects.LoginPage;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+@Listeners(com.automation.utils.Listener.class)
 
 /**
  * Created by RashmiM on 3/24/2016.

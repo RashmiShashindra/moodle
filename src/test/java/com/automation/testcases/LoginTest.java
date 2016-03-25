@@ -2,9 +2,13 @@ package com.automation.testcases;
 
 import com.automation.browser.BaseTest;
 import com.automation.pageobjects.LoginPage;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(com.automation.utils.Listener.class)
+
 public class LoginTest extends BaseTest{
+
 
     @Test(groups = {"BAT","REG"} )
     public void test_Successful_User_Login(){

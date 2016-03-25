@@ -3,6 +3,10 @@
 
 <suite name="Suite1">
 
+    <listeners>
+        <listener class-name="com.automation.utils.Listener"></listener>
+    </listeners>
+
     <test name="Execution1">
         <classes>
             <class name="com.automation.testcases.LoginTest" />
