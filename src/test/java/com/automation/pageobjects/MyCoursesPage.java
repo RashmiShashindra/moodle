@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.Reporter;
 
 /**
  * Created by RashmiM on 3/24/2016.
@@ -31,23 +32,27 @@ public class MyCoursesPage extends BasePage {
         super(driver);
         PageFactory.initElements(driver, this);
         logger.info("Intialize My Courses Page...");
+        Reporter.log("Intialize My Courses Page...");
     }
 
     public MyCoursesPage validate_Course_Page(String header){
         Assert.assertEquals(lblCourse.getText(),header);
         logger.info("validated Courses page successfully...");
+        Reporter.log("validated Courses page successfully...");
         return this;
     }
 
     public MyCoursesPage click_Customize_Page_Button(){
         btnCustomizePage.click();
         logger.info("Clicked Customize Page button successfully...");
+        Reporter.log("Clicked Customize Page button successfully...");
         return this;
     }
 
     public MyCoursesPage click_Stop_Customize_Page(){
         btnStopCustomizePage.click();
         logger.info("Clicked Stop Customize button successfully...");
+        Reporter.log("Clicked Stop Customize button successfully...");
         return this;
     }
 

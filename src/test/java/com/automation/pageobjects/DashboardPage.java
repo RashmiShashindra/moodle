@@ -11,6 +11,7 @@ import org.testng.Assert;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Reporter;
 
 
 /**
@@ -37,17 +38,20 @@ public class DashboardPage extends BasePage{
         super(driver);
         PageFactory.initElements(driver, this);
         logger.info("Initialize Dashboard Page...");
+        Reporter.log("Initialize Dashboard Page...");
     }
 
     public DashboardPage validate_Dashboard_Page(){
         Assert.assertEquals(dashboardText.getText(),"Admin Dashboard");
         logger.info("Verified Dashboard text...");
+        Reporter.log("Verified Dashboard text...");
         return this;
     }
 
     public MyCoursesPage click_MyCourses_Link(){
         lnkMyCourses.click();
         logger.info("Clicked on My Courses Link...");
+        Reporter.log("Clicked on My Courses Link...");
         return new MyCoursesPage(driver);
     }
 

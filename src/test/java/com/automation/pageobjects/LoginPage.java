@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.apache.log4j.*;
+import org.testng.Reporter;
 
 /**
  * Created by RashmiM on 3/15/2016.
@@ -33,6 +34,7 @@ public class LoginPage extends BasePage{
         super(driver);
         PageFactory.initElements(driver, this);
         logger.info("Initialize Login ...");
+        Reporter.log("Initialize Login ...");
     }
 
     public DashboardPage step_Successful_User_Login(String uname,String pword){
@@ -53,22 +55,26 @@ public class LoginPage extends BasePage{
         Thread.sleep(2000);
         Assert.assertEquals(lblLoginErrorMessage.getText(),errorMessage);
         logger.info("Validated error message successfully!");
+        Reporter.log("Validated error message successfully!");
         return this;
     }
 
     private void action_EnterUsername(String name){
         txtUserName.sendKeys(name);
         logger.info("Entered username Successfully");
+        Reporter.log("Entered username Successfully");
     }
 
     private void action_EnterPassword(String pwd){
         txtPassword.sendKeys(pwd);
         logger.info("Entered Password successfully");
+        Reporter.log("Entered Password successfully");
     }
 
     private void clickLoginButton(){
         login.click();
         logger.info("Clicked Login button Successfully");
+        Reporter.log("Clicked Login button Successfully");
     }
 
 }
