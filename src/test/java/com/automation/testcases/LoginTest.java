@@ -41,6 +41,13 @@ public class LoginTest extends BaseTest{
 
     }
 
+    @Test(groups = {"BAT"})
+    public void test_Failing_Screenshot_Test_Case(){
+        new LoginPage(getDriver()).
+                step_Successful_User_Login("adfa","adfadf").
+                validate_Dashboard_Page();
+    }
+
 
 
 }
