@@ -35,8 +35,8 @@ public class BasePage {
         }
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.get("https://demo.totaralms.com/login/index.php");
-        Assert.assertEquals("Totara Demo Site: Log in to the site", driver.getTitle());
+        driver.get("http://10.101.15.21:8080/ui-training-app/");
+        Assert.assertEquals("Directory Listing For /", driver.getTitle());
         logger.info("*************** Test Started ********************");
         return driver;
     }
