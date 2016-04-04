@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
  */
 public class MyCoursesTest extends BaseTest {
 
-    //@Test(groups = {"BAT","REG"})
+    @Test(groups = {"BAT","REG"})
     public void test_verifying_click_Customize_Button(){
         new LoginPage(getDriver()).
                 step_Successful_User_Login("demoadmin","demoadmin").
